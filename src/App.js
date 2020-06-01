@@ -12,6 +12,16 @@ class App extends Component {
     href: "",
   };
 
+  componentDidMount() {
+    this.setState({
+      color: this.getRandomBackgroundColor(),
+    });
+  }
+
+  getRandomBackgroundColor = () => {
+    return "#" + `0${(~~(Math.random() * 16777215)).toString(16)}`.slice(-6);
+  };
+
   handleChange = (color) => {
     this.setState({
       color: color.hex,
