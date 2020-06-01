@@ -9,6 +9,17 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.App .downButton {
+  width: 180px;
+  height: 30px;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: #fff;
+  background-color: tomato;
+  border: none;
+  border-radius: 1rem;
+  margin-bottom: 3rem;
+}
 
 .textInput {
   margin: 20px;

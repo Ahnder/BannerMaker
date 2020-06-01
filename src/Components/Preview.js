@@ -26,7 +26,7 @@ class Preview extends Component {
   componentDidUpdate() {
     const canvas = this.canvasRef.current;
     const ctx = canvas.getContext("2d");
-    const { color, text } = this.props;
+    const { color, text, href, updateCanvas } = this.props;
 
     ctx.fillStyle = color;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -36,6 +36,9 @@ class Preview extends Component {
       size: "40",
       font: "Arial",
     });
+
+    const url = canvas.toDataURL();
+    href !== url && updateCanvas(url);
   }
 
   setFont = (canvas, text, args) => {

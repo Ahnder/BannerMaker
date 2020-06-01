@@ -32,6 +32,11 @@ class App extends Component {
       text: e.target.value,
     });
   };
+  handleCanvasChange = (href) => {
+    this.setState({
+      href,
+    });
+  };
 
   render() {
     const { color, text, href } = this.state;
@@ -39,9 +44,17 @@ class App extends Component {
     return (
       <div className="App">
         <span>Banner Maker</span>
-        <Preview color={color} text={text} href={href} />
+        <Preview
+          color={color}
+          text={text}
+          href={href}
+          updateCanvas={this.handleCanvasChange}
+        />
         <TextInput onChange={this.handleTextChange} />
         <Palette color={color} onChange={this.handleChange} />
+        <a className="downButton" href={href} download="banner-image.png">
+          Download (PNG)
+        </a>
       </div>
     );
   }
